@@ -1,0 +1,34 @@
+.calendar_header
+{
+    padding-top : 2% !important;
+}
+
+.cal-disabled {
+    background-color: #eee;
+    pointer-events: none;
+  }
+  
+  .cal-disabled .cal-day-number {
+    opacity: 0.1;
+  }
+
+  .btn-primary {
+    color : #fff !important;
+    background-color: #6c757d !important;
+    border-color:#6c757d!important;
+  }
+
+  .btn
+  {
+     /*margin: 2% !important;  */
+     border-radius: 0rem;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active{
+
+    color : #fff !important;
+    background-color: darkgray !important;
+    border-color:darkgray!important;
+
+  }

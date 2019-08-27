@@ -1,0 +1,64 @@
+.calendar_header
+{
+    padding-top : 2% !important;
+}
+
+.cal-disabled {
+    background-color: #eee;
+    pointer-events: none;
+  }
+  
+  .cal-disabled .cal-day-number {
+    opacity: 0.1;
+  }
+
+  .btn-primary {
+    color : #fff !important;
+    background-color: #6c757d !important;
+    border-color:#6c757d!important;
+  }
+
+  .btn_width{
+    
+    border-color:lightgrey;
+    width:100%;
+    color:black;
+    font-weight:bold;
+}	
+
+.ngx-picker input {
+
+  display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+  .btn
+  {
+     /*margin: 2% !important;  */
+     border-radius: 0rem;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active{
+
+    color : #fff !important;
+    background-color: darkgray !important;
+    border-color:darkgray!important;
+
+  }
+
+  button.btn.btn-primary.pull-right {
+    float: right;
+}

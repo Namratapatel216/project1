@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">edwisor</a>
+            </div>
+    
+            <!-- Brand
+            <a class="navbar-brand" href="#">edwisor</a>  -->
+    
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav ml-auto" id="collapsibleNavbar">
+                    <li class="nav-item" *ngIf="M_P_UserType === 'admin'">
+                        <a class="nav-link" href="javascript:void(0)" (click)="all_users()">User List</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" (click)="edit_profile()" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hii {{UserName}}</a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="javascript:void(0)" (click)="edit_profile()">Edit Profile</a>
+                            <a class="dropdown-item" href="javascript:void(0)" (click)="change_password()">Change Password</a>
+                        </div>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" (click)="logout()">Log Out</a>
+                    </li> 
+                </ul>
+            </div> 
+        </div>
+    </nav>
+    
+    <div class="container-fluid ">
+
+            <div class="row">
+        
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        
+                    <div class="card card-signin my-5" style="border: 0px!important;">
+                        <div class="card-body">
+        
+                            <h1 style="text-align: center;margin-bottom:2%;">Meeting Planner</h1>
+        
+                            
+                            <div class="info-form" style="border:1px solid;border-color:lightgrey;border-radius:25px;padding:5%;">
+                                <form  #signUpForm="ngForm" (ngSubmit)="edit_profile_data()" class="form-inlin justify-content-center">
+        
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Firstname</label>
+                                        <input type="email" name="firstName" [(ngModel)]="single_user_data.firstName" #fname="ngModel"
+                                            class="form-control" id="exampleInputfirstname" aria-describedby="emailHelp"
+                                            placeholder="Enter Firstname">
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Lastname</label>
+                                        <input type="email" name="lastName" [(ngModel)]="single_user_data.lastName" #lname="ngModel"
+                                            class="form-control" id="exampleInputlastname" aria-describedby="emailHelp"
+                                            placeholder="Enter Lastname">
+                                    </div>
+        
+                                    <div class="phone-list">
+                                        <label for="exampleInputEmail1">Mobile Number</label>
+                                        <div class="input-group phone-input">
+                                          <span class="input-group-btn" style="width:30%;">
+                                                <select  class="form-control" id="cntry__"  name="cntry" [(ngModel)]="single_user_data.country_name"  id="country_drop_down" (change)="getcountryname($event.target.value)">    
+                                                    <option *ngFor="let cntrs of entries" [value]="cntrs[0]" >{{cntrs[1]}}</option>
+                                                </select>
+                                            </span> 
+                                            
+                                            <input  type="hidden" id="cc_code" name="country_code" [(ngModel)]="single_user_data.country_code" [value]="cntry_code"/>
+
+                                            <input  type="hidden" id="cc_code_length" name="cc_code_length" [(ngModel)]="single_user_data.cntry_code_length" [value]="cntry_code_length"/>
+                                        
+                                            <input type="hidden" id="cc_name" name="name_of_country" [(ngModel)]="single_user_data.country_name" ng-init="name_of_country=2" ng-value="name_of_country" #c_name="ngModel" class="type-input" [value]="cntry" />
+        
+                                            <input type="text" id="mobileNumber" name="mobileNumber" [(ngModel)]="single_user_data.mobileNumber" #m_no="ngModel" class="form-control" placeholder="+1 (999) 999 9999" value="{{cntry_code}}" />
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" name="email" [(ngModel)]="single_user_data.email" #mail="ngModel"
+                                            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                            placeholder="Enter email">
+                                    </div>
+        
+                                    
+                                    <button type="submit" class="btn btn_width">Edit Profile</button>
+                                </form>
+        
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>    

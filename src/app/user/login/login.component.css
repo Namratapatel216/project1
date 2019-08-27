@@ -1,0 +1,51 @@
+.top_header {
+    background-color : lightgrey;
+    padding : 2%;
+    font-size : 2rem;
+}
+
+.form_middle {
+    width : 35%;
+    margin-top : 5%;
+    border-style: solid;
+    border-width: medium;
+    padding : 2%;
+    border-radius : 25px;
+    position: fixed;
+    left: 32%;
+    border-color : lightgrey;
+    top : 20%;
+}
+.form_header{
+    text-align :center;
+    margin:2%;
+}
+.form-group .form-control {
+    width : 100%;
+    left : 25% !important;
+    
+}
+.form-group label {
+    color : lightgrey;
+}
+.btn_width{
+    
+    border-color:lightgrey;
+    width:100%;
+    color:black;
+    font-weight:bold;
+}	
+.form-control {
+    color: black;
+}
+
+.create-account{
+    text-align: center;
+    padding-top : 5%;
+}
+
+.forgot-password-link{
+    
+    padding-top : 2%;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">edwisor</a>
+        </div>
+
+        <!-- Brand
+        <a class="navbar-brand" href="#">edwisor</a>  -->
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav ml-auto" id="collapsibleNavbar">
+                <li class="nav-item" *ngIf="M_P_UserType === 'admin'">
+                    <a class="nav-link" href="javascript:void(0)" (click)="all_users()">User List</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hii {{UserName}}</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="javascript:void(0)" (click)="edit_profile()">Edit Profile</a>
+                            <a class="dropdown-item" href="javascript:void(0)" (click)="change_password()">Change Password</a>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" (click)="logout()">Log Out</a>
+                </li> 
+            </ul>
+        </div> 
+    </div>
+</nav>
+
+<div class="container">
+    <h3>ALL Users</h3>
+    <ul class="list-group" >
+        <li class="list-group-item" *ngFor="let all_user_data of get_user_list"><a href="javascript:void(0);" [routerLink]="['/per-user',all_user_data['userId']]">{{all_user_data['firstName']}} {{all_user_data['lastName']}}</a></li>
+    </ul>
+</div>
